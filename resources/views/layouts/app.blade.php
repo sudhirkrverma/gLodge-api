@@ -38,33 +38,38 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
+    <!-- <style>
         .top-header{
             display: flex;
             flex-direction: row;
         }
-    </style>
+    </style> -->
+
 </head>
 
 <body>
- 
+
     <div id="app">
-        <div class="container" id="top-header">
-            <div class="top-header row">
-                <div class="left">
+        <div class="container">
+            <div class="top-header row ">
+                <div class="left mt-2">
                     <!-- Image Logo -->
-                    <img src="{{ asset('admin/ashok.png') }}" width="100px" height="120px" alt="Image Logo"/>
+                    <img src="{{ asset('admin/ashok.png') }}" width="100px" height="120px" style="display: block;
+                    margin-left: auto;
+                    margin-right: auto;" alt="Image Logo" />
                     <h6 class="text-center font-weight-bold">District East Siang</h6>
                     <h6 class="text-center font-weight-bold">Arunachal Pradesh</h6>
                 </div>
-                <div class="mid ml-4 mt-4">
+                <div class="mid m-4 ">
                     <h1 class="text-center mt-4 text-info font-weight-bold">Government Lodge Managemnent System</h1>
                 </div>
                 <div class="right ml-4 mr-4 mt-4">
-            
+
                     <!-- <img src="{{ asset('admin/digital-india.png') }}" width="150px" height="100px" alt="Image Digital India"/> -->
-                    <img src="{{ asset('admin/aplogo.png') }}" width="150px" height="100px" alt="Image Digital India"/>
-    
+                    <img src="{{ asset('admin/aplogo.png') }}" width="150px" height="100px"  style="display: block;
+                    margin-left: auto;
+                    margin-right: auto;" alt="Image Digital India" />
+
                 </div>
             </div>
         </div>
@@ -127,8 +132,10 @@
                         <li class="nav-item"><a href="gallery" class="nav-link text-light mr-2">Gallery </a></li>
                         <li class="nav-item"><a href="aboutUs" class="nav-link text-light mr-2">About Us</a></li>
                         <li class="nav-item"><a href="myBookings" class="nav-link text-light mr-2">My Bookings</a></li>
-                        <li class="nav-item"><a href="feedback" class="nav-link text-light mr-2">Feedback <i class="fa fa-envelope"></i> </a></li>
-                        <li class="nav-item"><a href="contact" class="nav-link text-light mr-2">Contact Us <i class="fa fa-address-book"></i></a></li>
+                        <li class="nav-item"><a href="feedback" class="nav-link text-light mr-2">Feedback <i
+                                    class="fa fa-envelope"></i> </a></li>
+                        <li class="nav-item"><a href="contact" class="nav-link text-light mr-2">Contact Us <i
+                                    class="fa fa-address-book"></i></a></li>
                         @else
                         {{__('invalid')}}
                         @endif
@@ -161,13 +168,14 @@
     </div>
     <div class="container-fluid bg-secondary text-light">
 
-        <p class="text-center py-3 mb-0 font-weight-bold">Copyright © gLodge Managemnent System - Pasighat East Siang District- Arunachal
+        <p class="text-center py-3 mb-0 font-weight-bold">Copyright © gLodge Managemnent System - Pasighat East Siang
+            District- Arunachal
             Pradesh |
             All rights reserved</p>
         <h6 class="text-center mt-0 font-weight-bold">Email: dio-esg@nic.in | Phone: 22246</h6>
         <img src="{{ asset('admin/nicLogo.png')}}"
             style="display:block; width: 8%;  margin-left:auto; margin-right:auto;  " alt="Image" />
-    
+
     </div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
