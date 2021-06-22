@@ -197,7 +197,7 @@ class SuperAdminController extends Controller
             $feedback=Feedback::where('reply','<>',NULL)->latest()->get();
             // return $feedback;
         
-            Session::flash('status','These are all the queries');
+            Session::flash('queryStatus','These are all the queries');
           
            return view('superadmin/queries')->with(['feedback'=>$feedback],200);
 

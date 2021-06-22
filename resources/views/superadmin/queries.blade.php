@@ -5,10 +5,10 @@
     <h2 class="font-weight-bold text-center">
         || User Queries ||
     </h2>
-    @if(Session::has('status'))
+    @if(Session::has('queryStatus'))
     <!-- <p class="text-success">{{ Session::get('status') }}</p> -->
     <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <strong>Success! </strong> {{Session::get('status')}}
+        <strong>Success! </strong> {{Session::get('queryStatus')}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
