@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-  @if(Session::has('status'))
+  @if(Session::has('feedbackStatus'))
   <!-- <p class="text-success">{{ Session::get('status') }}</p> -->
   <div class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Success!</strong> {{Session::get('status')}}
+    <strong>Success!</strong> {{Session::get('feedbackStatus')}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>

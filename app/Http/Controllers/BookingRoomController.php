@@ -224,7 +224,7 @@ class BookingRoomController extends Controller
             return view('myBookings')->with(['myBookings'=>$myBookings,'message'=>'These are all your bookings data'],200);
         }
 
-        Session::flash('status','These are all your bookings data');
+        Session::flash('bookingStatus','These are all your bookings data');
         //Now we just pass the data to view
         return view('myBookings')->with(['myBookings'=>$myBookings,'message'=>'These are all your bookings data'],200);
     }

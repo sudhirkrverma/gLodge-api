@@ -35,7 +35,7 @@ class FeedbackController extends Controller
         $feed->address=$request['address'];
         $feed->feedback=$request['feedback'];
         $feed->save();
-        $request->session()->flash('status','Your valuable feedback has been submitted.');
+        $request->session()->flash('feedbackStatus','Your valuable feedback has been submitted.');
         return \redirect('feedback');
 
     }

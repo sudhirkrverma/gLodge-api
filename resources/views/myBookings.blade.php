@@ -6,10 +6,10 @@
    
 
 
-  @if(Session::has('status'))
+  @if(Session::has('bookingStatus'))
     <!-- <p class="text-success">{{ Session::get('status') }}</p> -->
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Boooking Data!</strong> {{Session::get('status')}}
+        <strong>Boooking Data!</strong> {{Session::get('bookingStatus')}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
