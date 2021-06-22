@@ -62,7 +62,8 @@
                 </div>
                 <div class="right ml-4 mr-4 mt-4">
             
-                    <img src="{{ asset('admin/digital-india.png') }}" width="150px" height="100px" alt="Image Digital India"/>
+                    <!-- <img src="{{ asset('admin/digital-india.png') }}" width="150px" height="100px" alt="Image Digital India"/> -->
+                    <img src="{{ asset('admin/aplogo.png') }}" width="150px" height="100px" alt="Image Digital India"/>
     
                 </div>
             </div>
