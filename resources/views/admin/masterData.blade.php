@@ -1,9 +1,42 @@
 @extends('layouts.masterDataLayout')
+<style>
+      .tile {
 
+border-radius: 20px;
+width: 100px;
+height: 100px;
+margin: 10px;
+color: aliceblue;
+}
+</style>
 @section('content')
 <div class="container">
-
+ 
     <h4 class="text-center text-info">|| Master Data ||</h4>
+    <div class="row ml-4">
+        <div class="tile col-md-2 ml-2 bg-danger">
+            <h5 class="text-center font-weight-bold mt-3">
+                Lodge Facilities
+            </h5>
+            <h5 class="text-center text-dark font-weight-bold">{{count($lodgeFacility)}}</h5>
+        </div>
+        <div class="tile col-md-2 ml-2 bg-info">
+            <h5 class="text-center font-weight-bold mt-3">
+                Room Categories
+            </h5>
+            <h5 class="text-center text-dark font-weight-bold">{{count($roomCategory)}}</h5>
+        </div>
+        <div class="tile col-md-2 ml-2 bg-success">
+            <h5 class="text-center font-weight-bold mt-3">Room</h5>
+            <h5 class="text-center text-dark font-weight-bold">{{count($room)}}</h5>
+        </div>
+        <div class="tile col-md-2 ml-2 bg-info">
+            <h5 class="text-center font-weight-bold mt-3">Booking</h5>
+            <h5 class="text-center text-dark font-weight-bold">{{count($booking)}}</h5>
+        </div>
+     
+       
+    </div>
     <h5 class="font-weight-bold text-center mt-4">Avaiable Room </h5>
     <table class="table table-bordered yajra-datatable" id="customers">
     <thead>

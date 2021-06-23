@@ -53,6 +53,7 @@ class AdminController extends Controller
                $no_of_room_category=count($roomCategory);
                $bookingData=BookingRoom::where('lodge_id',$lodge->id)->where('payment_status','Approved')->get();
                $no_of_booking=count($bookingData);
+               
             return view('admin.home')->with(['lodge'=>$lodge,'noOfRoom'=>$no_of_room,'noOfBooking'=>$no_of_booking,'noOfRoomCategory'=>$no_of_room_category]);
         }
         else{
@@ -192,8 +193,9 @@ public function masterData(){
         $roomCategory=RoomCategory::where('lodge_id',$lodge->id)->get();
         $roomFacility=RoomFacility::where('lodge_id',$lodge->id)->get();
         $room=Room::where('lodge_id',$lodge->id)->get();
+        $bookingData=BookingRoom::where('lodge_id',$lodge->id)->where('payment_status','Approved')->get();
       
-        return view('admin.masterData')->with(['lodgeFacility'=>$lodgeFacility,'roomCategory'=>$roomCategory,'roomFacility'=>$roomFacility,'room'=>$room]);
+        return view('admin.masterData')->with(['lodgeFacility'=>$lodgeFacility,'roomCategory'=>$roomCategory,'roomFacility'=>$roomFacility,'room'=>$room,'booking'=>$bookingData]);
     }
     else{
         return \redirect('/home');
