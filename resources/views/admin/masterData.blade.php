@@ -7,7 +7,10 @@ width: 100px;
 height: 100px;
 margin: 10px;
 color: aliceblue;
+min-width: 21%;
+
 }
+
 </style>
 @section('content')
 <div class="container">
@@ -20,17 +23,17 @@ color: aliceblue;
             </h5>
             <h5 class="text-center text-dark font-weight-bold">{{count($lodgeFacility)}}</h5>
         </div>
-        <div class="tile col-md-2 ml-2 bg-info">
+        <div class="tile col-md-2 ml-2 bg-info" style="background-color: #007bff!important;">
             <h5 class="text-center font-weight-bold mt-3">
                 Room Categories
             </h5>
             <h5 class="text-center text-dark font-weight-bold">{{count($roomCategory)}}</h5>
         </div>
-        <div class="tile col-md-2 ml-2 bg-success">
+        <div class="tile col-md-2 ml-2 bg-success "  style="background-color: #28a745!important;">
             <h5 class="text-center font-weight-bold mt-3">Room</h5>
             <h5 class="text-center text-dark font-weight-bold">{{count($room)}}</h5>
         </div>
-        <div class="tile col-md-2 ml-2 bg-info">
+        <div class="tile col-md-2 ml-2 bg-info" style="background-color: #007bff!important;">
             <h5 class="text-center font-weight-bold mt-3">Booking</h5>
             <h5 class="text-center text-dark font-weight-bold">{{count($booking)}}</h5>
         </div>
