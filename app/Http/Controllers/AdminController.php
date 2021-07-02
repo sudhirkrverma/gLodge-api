@@ -190,7 +190,14 @@ public function masterData(){
 
         }
         $lodgeFacility=LodgeFacility::where('lodge_id',$lodge->id)->get();
-        $roomCategory=RoomCategory::where('lodge_id',$lodge->id)->get();
+        // $roomCategory=RoomCategory::where('lodge_id',$lodge->id)->get();
+        $roomCategory=RoomCategory::where('room_categories.lodge_id',$lodge->id)
+                     ->join('room_facilities',function($join){
+                         $join->on('room_categories.lodge_id','room_facilities.lodge_id');
+                         $join->on('room_categories.room_type','room_facilities.room_type');
+
+                     })->get();
+                    //  return $roomCategory;
         $roomFacility=RoomFacility::where('lodge_id',$lodge->id)->get();
         $room=Room::where('lodge_id',$lodge->id)->get();
         $bookingData=BookingRoom::where('lodge_id',$lodge->id)->where('payment_status','Approved')->get();
