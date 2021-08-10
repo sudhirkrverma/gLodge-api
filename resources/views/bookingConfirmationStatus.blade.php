@@ -50,7 +50,8 @@
             
         </div>
         <div class="card-footer">
-            <h5 class="font-weight-bold">Booking Status : <span class="text-success">{{$bookingStatus}}</span> </h5>
+            <h5 class="font-weight-bold">Booking Status : <span class="text-success">{{$bookingStatus}}</span> 
+        </h5>
         </div>
     </div>
 

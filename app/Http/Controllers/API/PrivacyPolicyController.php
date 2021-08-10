@@ -16,11 +16,12 @@ class PrivacyPolicyController extends Controller
     public function index()
     {
         //
-        $pp=PrivacyPolicy::all();
-        if(empty($pp[0])){
-            return response(['message'=>'No record found'],200);
-        }
-        return response(['PrivacyPolicy'=>$pp,'message'=>'Data Retreived Successfully','total'=>count($pp)],200);
+       $pp=PrivacyPolicy::all();
+       if (count($pp)==0){
+           return response()->json(['message'=>'Privacy Policy not found','success'=>false]);
+
+       }
+       return \response()->json(['pp'=>$pp,'success'=>true],200);
     }
 
     /**

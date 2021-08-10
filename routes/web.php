@@ -38,6 +38,7 @@ Route::post('/directBookingRequest','BookingRoomController@directBookingRequest'
 Route::post('/indirectBookingRequest','BookingRoomController@indirectBookingRequest');
 Route::post('/bookingConfirmation','BookingRoomController@bookingConfirmation');
 Route::get('/myBookings','BookingRoomController@myBookings');
+Route::get('/cancelBooking/{id}','BookingRoomController@cancelBooking');
 
 
 // I have to validate all the get request also

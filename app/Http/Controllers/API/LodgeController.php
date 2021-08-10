@@ -16,8 +16,11 @@ class LodgeController extends Controller
     public function index()
     {
         //
-        $lodge=Lodge::all();
-        return response(['Lodges'=>$lodge,'message'=>'Data Retreived Successfully','total'=>count($lodge)],200);
+       $lodge=Lodge::all();
+       if(count($lodge)==0){
+           return response()->json(['message'=>'No data Found','success'=>false]);
+       }
+       return response()->json(['lodge'=>$lodge,'success'=>true],200);
     }
 
     /**

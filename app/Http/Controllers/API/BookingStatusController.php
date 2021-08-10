@@ -5,7 +5,8 @@ namespace App\Http\Controllers\API;
 use App\BookingRoom;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
+use Auth;
 class BookingStatusController extends Controller
 {
     /**
@@ -27,6 +28,25 @@ class BookingStatusController extends Controller
     public function store(Request $request)
     {
         //
+        $username=Auth::user()->email;
+
+        $currentDate=Carbon::now()->toDateString();
+        $myBookingStatus=BookingRoom::find($request->id);
+        
+
+        if ($currentDate>=$myBookingStatus->checkin){
+           return response()->json(['message'=>'Sorry, Booking Request can be cancelled only 24 hours before checkin into the lodge.','success'=>false]);
+        }
+
+        if($myBookingStatus->payment_status=='Cancelled'){
+            return response()->json(['message'=>'Booking Request has already been cancelled','success'=>false]);
+        }
+
+        BookingRoom::where('username',$username)->where('id',$request->id)->where('checkin','>',$currentDate)->update(['payment_status'=>'Cancelled']);
+       
+        //Now we just pass the data to view
+        return response()->json(['message'=>'Booking Request cancelled successully','success'=>true],200);
+
     }
 
     /**

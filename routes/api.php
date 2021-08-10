@@ -27,7 +27,11 @@ Route::apiResource('booking_room','API\BookingRoomController')->middleware('auth
 Route::apiResource('room_search','API\RoomSearchController')->middleware('auth:api');
 Route::apiResource('privacy_policy','API\PrivacyPolicyController')->middleware('auth:api');
 Route::apiResource('mybookings','API\MyBookingController')->middleware('auth:api');
-Route::apiResource('mybooking_status','API\BookingStatusController')->middleware('auth:api');
+Route::apiResource('cancelBooking','API\BookingStatusController')->middleware('auth:api');
+Route::apiResource('contact','API\LodgeController')->middleware('auth:api');
+// Route::apiResource('mybooking_status','API\BookingStatusController')->middleware('auth:api');
+
+// Admin Panel
 Route::apiResource('pending_request','API\Admin\PendingRequestController')->middleware('auth:api');
 Route::apiResource('confirm_booking','API\Admin\ConfirmBookingController')->middleware('auth:api');
 Route::apiResource('booking_status','API\Admin\BookingStatusController')->middleware('auth:api');

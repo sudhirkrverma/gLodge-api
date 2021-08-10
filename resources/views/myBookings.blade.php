@@ -8,7 +8,7 @@
 
   @if(Session::has('bookingStatus'))
     <!-- <p class="text-success">{{ Session::get('status') }}</p> -->
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
         <strong>Boooking Data!</strong> {{Session::get('bookingStatus')}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -26,17 +26,41 @@
       </div>
     
     @endif
+    @if(Session::has('cancelStatus'))
+    <!-- <p class="text-success">{{ Session::get('status') }}</p> -->
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Warning!</strong> {{Session::get('cancelStatus')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
+    @endif
+    @if(Session::has('cancelSuccess'))
+    <!-- <p class="text-success">{{ Session::get('status') }}</p> -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Warning!</strong> {{Session::get('cancelSuccess')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
+    @endif
 
 @foreach($myBookings as $booking)
 
 
 
 <div class="card m-4">
-        <h5 class="card-header font-weight-bold">{{$booking['room_no']}}- {{$booking['room_type']}} <span
-                class="text-primary ml-4"> {{$booking['lodge_name']}}</span> <span class="text-secondary ml-2"
-                style="font-size: 13px;">{{$booking['lodge_address']}}</span>
-                <span class="font-weight-bold" style="font-size: 16px; float:right;">Booking ID: <span class="text-success">{{$booking['order_id']}}</span> </span>
-            </h5>
+  <div class="card-header">
+    <h5 class="font-weight-bold">{{$booking['room_no']}}- {{$booking['room_type']}} <span
+      class="text-primary ml-4"> {{$booking['lodge_name']}}</span> 
+      <span class="font-weight-bold" style="font-size: 16px; float:right;">Booking ID: <span class="text-success">{{$booking['order_id']}}</span> </span>
+  </h5>
+  <h6 class="text-secondary font-weight-bold ">{{$booking['lodge_address']}}</h6>
+
+  </div>
+       
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-5"><img src="{{ asset('admin/room_images/') }}/{{$booking['image']}}" style="width: 100%; height: 95%;" alt="Image"/> </div>
@@ -66,9 +90,11 @@
         </div>
         <div class="card-footer">
           @if($booking['payment_status']=='Approved')
-            <h5 class="font-weight-bold">Booking Status : <span class="text-success">{{$booking['payment_status']}}</span> </h5>
+            <h5 class="font-weight-bold">Booking Status : <span class="text-success">{{$booking['payment_status']}}</span>
+             <span><a href="/cancelBooking/{{$booking['id']}}" class="btn btn-md btn-outline-danger ml-4" onclick="cancelBooking()">Cancel Booking</a></span> </h5>
           @else
-          <h5 class="font-weight-bold">Booking Status : <span class="text-danger">{{$booking['payment_status']}}</span> </h5>
+          <h5 class="font-weight-bold">Booking Status : <span class="text-danger">{{$booking['payment_status']}}</span> 
+        </h5>
           @endif
         </div>
     </div>
@@ -78,4 +104,5 @@
 
 
 </div>
+
 @endsection

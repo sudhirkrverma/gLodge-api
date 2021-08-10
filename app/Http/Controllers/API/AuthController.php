@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use Auth;
 use Illuminate\Http\Request;
 use App\User;
 use Session;
+// use App\Api\Auth;
 
 
 // use Illuminate\Support\Facades\Validator;
@@ -19,8 +21,8 @@ class AuthController extends Controller
         $validateData=$request->validate([
             'name'=>'required|max:55',
             'email'=>'required|email',
-            'password'=>'required',
-            'mobile'=>'required'
+            'password'=>'required|min:3',
+            'mobile'=>'required|min:10|max:12'
 
         ]);
         
@@ -32,7 +34,7 @@ class AuthController extends Controller
         
     
         if(!empty($checkUser))
-        return response (['message'=>'User Already Exist']);
+        return response (['message'=>'User Already Exist','success'=>false]);
        
       
        
@@ -40,7 +42,7 @@ class AuthController extends Controller
         $user=User::create($validateData);
         
         $accessToken=$user->createToken('authToken')->accessToken;
-        return response(['user'=>$user,'access_token'=>$accessToken]);
+        return response(['user'=>$user,'access_token'=>$accessToken,'success'=>true]);
 
     }
 
@@ -51,29 +53,33 @@ class AuthController extends Controller
 
         ]);
         if(!auth()->attempt($loginData)){
-            return response(['message'=>'Invalid Credentials']);
+            return response()->json(['message'=>'Invalid Credentials','success'=>false]);
         }
         $accessToken=auth()->user()->createToken('authToken')->accessToken;
-        return response(['user'=>auth()->user(),'access_token'=>$accessToken]);
+   
+         return \response()->json(['user'=>auth()->user(),'access_token'=>$accessToken,'success'=>true],200);
     }
     
-    public function logout()
+    public function logout(Request $request)
     {
-      
-        if(auth()->user()){
-            $user=auth()->user()->token();
-            $user->revoke();
-            return response()->json([
-                'success' => true,
-                'message' => 'Logout successfully'
-            ]);
-            }
-            else {
-              return response()->json([
-                'success' => false,
-                'message' => 'Unable to Logout'
-              ]);
+        // return 'logout';
+        if(Auth::user()){
 
+            $user=Auth::user()->token();
+            $user->revoke();
+
+            return \response()->json([
+                'success'=>true,
+                'message'=>'Logout Successfully'
+            ]);
+
+
+        }
+        else{
+            return \response()->json([
+                'success'=>false,
+                'message'=>'Unable to Logout'
+            ]);
         }
       
     }

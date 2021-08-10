@@ -228,6 +228,28 @@ class BookingRoomController extends Controller
         //Now we just pass the data to view
         return view('myBookings')->with(['myBookings'=>$myBookings,'message'=>'These are all your bookings data'],200);
     }
+
+    public function cancelBooking(Request $request,$id){
+        $username=Auth::user()->email;
+
+        $currentDate=Carbon::now()->toDateString();
+        $myBookingStatus=BookingRoom::find($id);
+        
+
+        if ($currentDate>=$myBookingStatus->checkin){
+            Session::flash('cancelStatus','Sorry, Booking Request can be cancelled only 24 hours before checkin into the lodge.');
+            return redirect('myBookings');
+
+        }
+
+        BookingRoom::where('username',$username)->where('id',$id)->where('checkin','>',$currentDate)->update(['payment_status'=>'Cancelled']);
+        Session::flash('cancelSuccess','Booking Request has been cancelled successfully');
+        //Now we just pass the data to view
+        return redirect('myBookings');
+
+        
+
+    }
     /**
      * Display a listing of the resource.
      *

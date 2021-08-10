@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\BookingRoom;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 
 class MyBookingController extends Controller
 {
@@ -15,11 +16,23 @@ class MyBookingController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        $username=$request->username;
-        // return $username;
-        $mybookings=BookingRoom::where('username','=',$username)->get();
-        return response(['mybookings'=>$mybookings,'message'=>'Data Retreived Successfully','total'=>count($mybookings)],200);
+          // first exract the username
+          $email=Auth::user()->email;
+          // return $username;
+          // Now we extact all the Booking history which have been booked by this username
+           $myBookings=BookingRoom::where('username',$email)->orderBy('id', 'DESC')->get();
+          //  return $myBookings;
+          if(count($myBookings)==0){
+              return response()->json(['message'=>'Empty..! no booking found','success'=>false]);
+          }
+  
+        //   return response(['user'=>auth()->user(),'access_token'=>$accessToken,'success'=>true]);
+        
+          return response()->json(['myBooking'=>$myBookings,'success'=>true,'total'=>count($myBookings)],200);
+         
+       
+
+
 
     }
 
@@ -40,10 +53,24 @@ class MyBookingController extends Controller
      * @param  \App\BookingRoom  $bookingRoom
      * @return \Illuminate\Http\Response
      */
-    public function show(BookingRoom $bookingRoom)
+    public function show(BookingRoom $bookingRoom,$bookingID)
     {
-        //
+        //Here we show the details for specific booking ID
+        $email=Auth::User()->email;
+        $bookingStatus=BookingRoom::where('order_id',$bookingID)->first();
+        // if(count($bookingStatus)==0){
+
+        //     return response()->json(['message'=>'Invalid Booking ID','success'=>false],200);
+        // }
+    if(is_null($bookingStatus)){
+            return response()->json(['message'=>'Invalid Booking ID','success'=>false],200);
+        }
+        return \response()->json(['status'=>$bookingStatus,'success'=>true],200);
     }
+
+
+
+  
 
     /**
      * Update the specified resource in storage.
@@ -52,9 +79,13 @@ class MyBookingController extends Controller
      * @param  \App\BookingRoom  $bookingRoom
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BookingRoom $bookingRoom)
+    public function update(Request $request, $id)
     {
         //
+        $booking=BookingRoom::find($id);
+        $booking->update(['payment_status'=>'Cancelled']);
+        return $booking;
+       
     }
 
     /**

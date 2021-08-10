@@ -23,6 +23,7 @@ min-width: 21%;
             <h5 class="  mt-1">
                 Lodge Facilities
             </h5>
+      
         </div>
         <div class="tile col-md-2 ml-2 bg-info" style="background-color: #007bff!important;">
                <h3 class=" text-dark font-weight-bold mt-3">{{count($roomCategory)}}</h3>

@@ -113,6 +113,7 @@ class RoomController extends Controller
 
       
         return  view('roomAvailable')->with(['rooms'=>$room,'data'=>$data,'message'=>'List of avaiable room','total'=>$total],200);
+        // return view('test');
         }
         
        
