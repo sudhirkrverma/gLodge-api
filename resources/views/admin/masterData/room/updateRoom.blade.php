@@ -26,7 +26,7 @@
     </div>
 
     @endif
-    <form action="/admin/masterData/room/updateRoom" method="post" enctype="multipart/form-data">
+    <form action="/glodge/public/admin/masterData/room/updateRoom" method="post" enctype="multipart/form-data">
         @if ( session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}

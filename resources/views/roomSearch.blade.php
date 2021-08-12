@@ -91,7 +91,7 @@
     <h2 class="font-weight-bold text-center">
        Search Now
     </h2>
-    <form action="/roomAvailable" method="post">
+    <form action="/glodge/public/roomAvailable" method="post">
         @if ( session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}

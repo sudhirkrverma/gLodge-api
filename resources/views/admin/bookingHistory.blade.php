@@ -73,7 +73,7 @@
                 @endif
 
 
-                <td><a href="/admin/cancelBooking/{{$booking->id}}" class="btn btn-sm btn-outline-danger">Cancel</a>
+                <td><a href="/glodge/public/admin/cancelBooking/{{$booking->id}}" class="btn btn-sm btn-outline-danger">Cancel</a>
                 </td>
             </tr>
             @endforeach

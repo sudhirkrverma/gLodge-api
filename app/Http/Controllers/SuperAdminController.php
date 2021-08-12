@@ -128,7 +128,7 @@ class SuperAdminController extends Controller
             $onboarding->mobile=$data['mobile'];
             $onboarding->role=$data['role'];
             $onboarding->save();
-            Session::flash('onboardingStatus','Admin has been onboarded successfully.!');
+            Session::flash('onboardingStatus',$onboarding->role.' has been onboarded successfully.!');
             return \redirect('/superadmin/onboarding');
         }
         elseif($role=='admin')

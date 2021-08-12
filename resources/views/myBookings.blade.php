@@ -91,7 +91,7 @@
         <div class="card-footer">
           @if($booking['payment_status']=='Approved')
             <h5 class="font-weight-bold">Booking Status : <span class="text-success">{{$booking['payment_status']}}</span>
-             <span><a href="/cancelBooking/{{$booking['id']}}" class="btn btn-md btn-outline-danger ml-4" onclick="cancelBooking()">Cancel Booking</a></span> </h5>
+             <span><a href="/glodge/public/cancelBooking/{{$booking['id']}}" class="btn btn-md btn-outline-danger ml-4" onclick="cancelBooking()">Cancel Booking</a></span> </h5>
           @else
           <h5 class="font-weight-bold">Booking Status : <span class="text-danger">{{$booking['payment_status']}}</span> 
         </h5>

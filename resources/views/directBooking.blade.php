@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title mb-3">We will use these details to share your booking information</h5>
                     <!-- here the form start -->
-                    <form action="/bookingConfirmation" method="POST">
+                    <form action="/glodge/public/bookingConfirmation" method="POST">
                         @if ( session('error'))
                         <div class="alert alert-danger">
                             {{ session('error') }}

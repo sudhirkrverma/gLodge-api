@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <h5 class="card-title mb-3">We will use these details to share your booking information</h5>
                     <!-- here the form start -->
-                    <form action="/bookingConfirmation" method="POST">
+                    <form action="/glodge/public/bookingConfirmation" method="POST">
                         @if ( session('error'))
                         <div class="alert alert-danger">
                             {{ session('error') }}
@@ -100,8 +100,47 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="state" class="font-weight-bold" style="font-size:16px">State</label>
-                                <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}"
-                                    placeholder="Select State">
+                                <!-- <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}"
+                                    placeholder="Select State"> -->
+                                    <select name="state" class="form-control" id="state" required>
+                                    <option value="">--Select State-- </option>
+                                    <option value="Andaman and Nicobar">Andaman and Nicobar</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Ladakh">Ladakh</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Pondicherry">Pondicherry</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="UT of DNH and DD">UT of DNH and DD</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                    <option value="Others">Others</option>
+
+
+                                </select>
                                     @error('state')
                                     <div class="text-danger">{{$message}}</div>
                                     @enderror

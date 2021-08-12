@@ -43,7 +43,7 @@
 
         </div>
         <div class="card-footer">
-            <form action="/superadmin/feedback/reply" method="post">
+            <form action="/glodge/public/superadmin/feedback/reply" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{$fb->id}}" required>
                 <textarea id="reply" name="reply" value="" rows="5" placeholder="Reply to the user" class="form-control" spellcheck="false" required></textarea>

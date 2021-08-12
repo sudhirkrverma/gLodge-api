@@ -105,23 +105,23 @@
                         @else
                         @if ( Auth::user()->role=='superadmin')
 
-                        <li class="nav-item"><a href="/superadmin/home" class="nav-link text-light ml-2">Home</a></li>
-                        <li class="nav-item"><a href="/superadmin/onboarding"
+                        <li class="nav-item"><a href="/glodge/public/superadmin/home" class="nav-link text-light ml-2">Home</a></li>
+                        <li class="nav-item"><a href="/glodge/public/superadmin/onboarding"
                                 class="nav-link text-light ml-2">Onboarding</a></li>
-                        <li class="nav-item"><a href="/superadmin/feedback"
+                        <li class="nav-item"><a href="/glodge/public/superadmin/feedback"
                                 class="nav-link text-light ml-2">Feedback</a></li>
-                        <li class="nav-item"><a href="/superadmin/queries" class="nav-link text-light ml-2">Queries</a>
+                        <li class="nav-item"><a href="/glodge/public/superadmin/queries" class="nav-link text-light ml-2">Queries</a>
                         </li>
                         @elseif( Auth::user()->role=='admin')
 
-                        <li class="nav-item"><a href="/admin/home" class="nav-link text-light ml-2">Home</a></li>
-                        <li class="nav-item"><a href="/admin/bookingHistory" class="nav-link text-light ml-2">Booking
+                        <li class="nav-item"><a href="/glodge/public/admin/home" class="nav-link text-light ml-2">Home</a></li>
+                        <li class="nav-item"><a href="/glodge/public/admin/bookingHistory" class="nav-link text-light ml-2">Booking
                                 History</a></li>
-                        <li class="nav-item"><a href="/admin/masterData" class="nav-link text-light ml-2">Master
+                        <li class="nav-item"><a href="/glodge/public/admin/masterData" class="nav-link text-light ml-2">Master
                                 Data</a></li>
-                        <li class="nav-item"><a href="/admin/updateProfileRedirect"
+                        <li class="nav-item"><a href="/glodge/public/admin/updateProfileRedirect"
                                 class="nav-link text-light ml-2">Update Profile</a></li>
-                        <li class="nav-item"><a href="/admin/feedback" class="nav-link text-light ml-2">Feedback</a>
+                        <li class="nav-item"><a href="/glodge/public/admin/feedback" class="nav-link text-light ml-2">Feedback</a>
                         </li>
                         @elseif(Auth::user()->role=='user')
 
@@ -129,7 +129,7 @@
                         <li class="nav-item"><a href="about" class="nav-link text-light mr-2">About District</a></li>
                         <li class="nav-item"><a href="roomSearch" class="nav-link text-light mr-2">Room Availability
                             </a></li>
-                        <li class="nav-item"><a href="gallery" class="nav-link text-light mr-2">Gallery </a></li>
+                        <li class="nav-item"><a href="gallery" class="nav-link text-light mr-2">Tourism </a></li>
                         <li class="nav-item"><a href="aboutUs" class="nav-link text-light mr-2">About Us</a></li>
                         <li class="nav-item"><a href="myBookings" class="nav-link text-light mr-2">My Bookings</a></li>
                         <li class="nav-item"><a href="feedback" class="nav-link text-light mr-2">Feedback <i
@@ -186,9 +186,9 @@
 
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>

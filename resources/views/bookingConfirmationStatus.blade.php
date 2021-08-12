@@ -18,10 +18,15 @@
 
 
     <div class="card m-4">
-        <h5 class="card-header font-weight-bold">{{$data['room_no']}}- {{$data['room_type']}} <span
-                class="text-primary ml-4"> {{$data['lodge_name']}}</span> <span class="text-secondary ml-2"
-                style="font-size: 13px;">{{$lodge_address}}</span>
+        
+        <div class="card-header">
+        <h5 class="font-weight-bold">{{$data['room_no']}}- {{$data['room_type']}} <span
+                class="text-primary ml-4"> {{$data['lodge_name']}}</span> 
                 <span class="font-weight-bold" style="font-size: 16px; float:right;">Booking ID: <span class="text-success">{{$bookingID}}</span> </span></h5>
+                <h6 class="text-secondary font-weight-bold ">{{$lodge_address}}</h6>
+
+        </div>
+       
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-5"><img src="{{ asset('admin/room_images/') }}/{{$data['room_image']}}" style="width: 100%; height: 95%;" alt="Image"/> </div>

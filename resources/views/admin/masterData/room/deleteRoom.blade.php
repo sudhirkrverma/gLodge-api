@@ -26,7 +26,7 @@
     </div>
 
     @endif
-    <form action="/admin/masterData/room/deleteRoom" method="post" >
+    <form action="/glodge/public/admin/masterData/room/deleteRoom" method="post" >
         @if ( session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}

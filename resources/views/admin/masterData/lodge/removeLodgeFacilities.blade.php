@@ -17,7 +17,7 @@
 
     @endif
 
-    <form action="/admin/masterData/lodge/removeLodgeFacilities" method="post">
+    <form action="/glodge/public/admin/masterData/lodge/removeLodgeFacilities" method="post">
         @if ( session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}

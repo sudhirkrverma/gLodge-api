@@ -59,8 +59,8 @@
         </div>
         <div class="card-footer">
             <h5 class="font-weight-bold">Onboarded on : <span class="text-success" style="font-size: small;">{{$lodge->created_at}}</span> </h5>
-            <a href="/superadmin/changeStatus/{{$lodge->id}}" class="btn btn-outline-danger" >Change Status</a>
-            <a href="/superadmin/viewDetail/{{$lodge->id}}" target="blank" class="btn btn-success ml-2" >View Detail</a>
+            <a href="/glodge/public/superadmin/changeStatus/{{$lodge->id}}" class="btn btn-outline-danger" >Change Status</a>
+            <a href="/glodge/public/superadmin/viewDetail/{{$lodge->id}}" target="blank" class="btn btn-success ml-2" >View Detail</a>
         </div>
     </div>
     @endforeach

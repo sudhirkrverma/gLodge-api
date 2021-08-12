@@ -110,7 +110,7 @@
 
                 <!-- from here we will start the form -->
 
-                <form action="/indirectBookingRequest" method="POST">
+                <form action="/glodge/public/indirectBookingRequest" method="POST">
                     @csrf
 
                     <!-- <input type="hidden" name="room_no" value="{{$room->room_no}}" readonly> -->

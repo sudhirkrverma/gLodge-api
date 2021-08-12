@@ -13,7 +13,7 @@
                 <div class="card-header font-weight-bold">{{ __('Onboarding to gLodge') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/superadmin/onboardingAdmin">
+                    <form method="POST" action="/glodge/public/superadmin/onboardingAdmin">
                         @csrf
 
                         <div class="form-group row">

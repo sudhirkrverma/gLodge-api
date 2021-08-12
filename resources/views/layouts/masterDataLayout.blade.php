@@ -242,18 +242,20 @@
                         @else
                         @if ( Auth::user()->role=='superadmin')
 
-                        <li class="nav-item"><a href="/superadmin/home" class="nav-link text-light ml-2">Home</a></li>
-                        <li class="nav-item"><a href="/superadmin/onboarding"
+                        <li class="nav-item"><a href="/glodge/public/superadmin/home" class="nav-link text-light ml-2">Home</a></li>
+                        <li class="nav-item"><a href="/glodge/public/superadmin/onboarding"
                                 class="nav-link text-light ml-2">Onboarding</a></li>
                         @elseif( Auth::user()->role=='admin')
 
-                        <li class="nav-item"><a href="/admin/home" class="nav-link text-light ml-2">Home</a></li>
-                        <li class="nav-item"><a href="/admin/bookingHistory" class="nav-link text-light ml-2">Booking
+                        <li class="nav-item"><a href="/glodge/public/admin/home" class="nav-link text-light ml-2">Home</a></li>
+                        <li class="nav-item"><a href="/glodge/public/admin/bookingHistory" class="nav-link text-light ml-2">Booking
                                 History</a></li>
-                        <li class="nav-item"><a href="/admin/masterData" class="nav-link text-light ml-2">Master
+                        <li class="nav-item"><a href="/glodge/public/admin/masterData" class="nav-link text-light ml-2">Master
                                 Data</a></li>
-                        <li class="nav-item"><a href="/admin/updateProfileRedirect"
+                        <li class="nav-item"><a href="/glodge/public/admin/updateProfileRedirect"
                                 class="nav-link text-light ml-2">Update Profile</a></li>
+                                <li class="nav-item"><a href="/glodge/public/admin/feedback" class="nav-link text-light ml-2">Feedback</a>
+                        </li>
                         @elseif(Auth::user()->role=='user')
 
                         <li class="nav-item"><a href="home" class="nav-link text-light mr-2">Home</a></li>
@@ -296,7 +298,7 @@
 
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3 class="font-weight-bold"><a href="/admin/masterData">Dashboard</a></h3>
+                    <h3 class="font-weight-bold"><a href="/glodge/public/admin/masterData">Dashboard</a></h3>
                 </div>
     
                 <ul class="list-unstyled components">
@@ -310,13 +312,13 @@
                                 <a href="add_gLodge.php">Add Lodge Name</a>
                             </li> -->
                             <li>
-                                <a href="/admin/masterData/lodge/addLodgeFacilities">Add Lodge Facilities</a>
+                                <a href="/glodge/public/admin/masterData/lodge/addLodgeFacilities">Add Lodge Facilities</a>
                             </li>
                             <li>
-                                <a href="/admin/masterData/lodge/removeLodgeFacilities">Remove Lodge Facilities</a>
+                                <a href="/glodge/public/admin/masterData/lodge/removeLodgeFacilities">Remove Lodge Facilities</a>
                             </li>
                             <li>
-                                <a href="/admin/masterData/lodge/changeLodgeFacilities">Change Lodge Facilities Status</a>
+                                <a href="/glodge/public/admin/masterData/lodge/changeLodgeFacilities">Change Lodge Facilities Status</a>
                             </li>
                         </ul>
                     </li>
@@ -325,11 +327,11 @@
                             Category</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu1">
                             <li>
-                                <a href="/admin/masterData/roomCategory/addRoomCategories">Add Room Categories</a>
+                                <a href="/glodge/public/admin/masterData/roomCategory/addRoomCategories">Add Room Categories</a>
                             </li>
                             
                             <li>
-                                <a href="/admin/masterData/roomCategory/updateRoomCategories">Update Room Categories</a>
+                                <a href="/glodge/public/admin/masterData/roomCategory/updateRoomCategories">Update Room Categories</a>
                             </li>
                         </ul>
                     </li>
@@ -338,7 +340,7 @@
                             Facilties</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu2">
                             <li>
-                                <a href="/admin/masterData/roomFacility/addRoomFacilities">Add/Update Room Facilities</a>
+                                <a href="/glodge/public/admin/masterData/roomFacility/addRoomFacilities">Add/Update Room Facilities</a>
                             </li>
                            
     
@@ -349,13 +351,13 @@
                             class="dropdown-toggle">Rooms</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu3">
                             <li>
-                                <a href="/admin/masterData/room/addRoom">Add Room </a>
+                                <a href="/glodge/public/admin/masterData/room/addRoom">Add Room </a>
                             </li>
                             <li>
-                                <a href="/admin/masterData/room/deleteRoom">Delete Room </a>
+                                <a href="/glodge/public/admin/masterData/room/deleteRoom">Delete Room </a>
                             </li>
                             <li>
-                                <a href="/admin/masterData/room/updateRoom">Change Room Status</a>
+                                <a href="/glodge/public/admin/masterData/room/updateRoom">Change Room Status</a>
                             </li>
     
                         </ul>

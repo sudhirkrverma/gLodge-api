@@ -14,7 +14,7 @@
                 <div class="card-header font-weight-bold text-center">{{ __('Onboarding to gLodge - Update Your Profile') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/admin/updateProfile" enctype="multipart/form-data">
+                    <form method="POST" action="/glodge/public/admin/updateProfile" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
