@@ -201,8 +201,9 @@ public function masterData(){
         $roomFacility=RoomFacility::where('lodge_id',$lodge->id)->get();
         $room=Room::where('lodge_id',$lodge->id)->get();
         $bookingData=BookingRoom::where('lodge_id',$lodge->id)->where('payment_status','Approved')->get();
+        // return $lodge;
       
-        return view('admin.masterData')->with(['lodgeFacility'=>$lodgeFacility,'roomCategory'=>$roomCategory,'roomFacility'=>$roomFacility,'room'=>$room,'booking'=>$bookingData]);
+        return view('admin.masterData')->with(['lodge'=>$lodge,'lodgeFacility'=>$lodgeFacility,'roomCategory'=>$roomCategory,'roomFacility'=>$roomFacility,'room'=>$room,'booking'=>$bookingData]);
     }
     else{
         return \redirect('/home');

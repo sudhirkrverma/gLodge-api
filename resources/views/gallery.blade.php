@@ -62,7 +62,7 @@
     </div>
     <div class="container mt-4">
       <div class="card" style="width: 70rem;">
-        <img class="card-img-top" src="{{ asset('tourism/bridge.jpeg') }}" alt="Card image cap">
+        <img class="card-img-top" src="{{ asset('tourism/bridge.jpeg') }}" style="height:70vh;" alt="Card image cap">
         <div class="card-body">
           <h4 class="text-success text-center">Pongging hanging Bridge</h4>
           <p class="card-text">Located just approximately 10 KMs form Bodak village, one can trek down to Pongging village crossing the hanging bridge. The bridge is made of metal and bamboo frame and is the only way of transportation for the village.
@@ -80,7 +80,7 @@
 
     <div class="container mt-4">
       <div class="card" style="width: 70rem;">
-        <img class="card-img-top" src="{{ asset('tourism/sirki.jpeg') }}" alt="Card image cap">
+        <img class="card-img-top" src="{{ asset('tourism/sirki.jpeg') }}" style="height:70vh;" alt="Card image cap">
         <div class="card-body">
           <h4 class="text-success text-center">Sirki Waterfall</h4>
           <p class="card-text">It is located at a distance of approx 10KMs from Pasighat, It is a must visit to enjoy adventurous trek and witness the marvel of nature.
