@@ -303,7 +303,9 @@
     
                 <ul class="list-unstyled components">
                    
-                    <p> <a href="/glodge/public/admin/masterData">{{$lodge->lodge_name}}</a></p>
+                    <p> <a href="/glodge/public/admin/masterData">Admin Panel
+                  <!-- here you have to pass lodge name -->
+                </a></p>
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">G-Lodge
                             Details</a>
